@@ -1,16 +1,16 @@
 import datetime
-str2="请输入加密内容"
+str2=""
 enco=str2.encode('unicode_escape')
-print(enco)
 str=str(enco,'utf-8')
-l1=(datetime.datetime.now().hour)%0x18
-l2=(datetime.datetime.now().day)%0x1f
-l3=(datetime.datetime.now().month)%0xc
-print(type(enco))
-print(str)
+l1=(datetime.datetime.now().hour)%0x5
+l2=(datetime.datetime.now().day)%0x6
+l3=(datetime.datetime.now().month)%0x7
+l4=(datetime.datetime.now().minute)%0x8
+l5=(datetime.datetime.now().year)%0x9
 str=str.replace("5",f"{l1}")
 str=str.replace("6",f"{l2}")
 str=str.replace("7",f"{l3}")
+str=str.replace("8",f"{l4}")
+str=str.replace("9",f"{l5}")
 by=bytes(str,encoding='utf-8')
-print(str)
 print(by.decode('unicode_escape'))
